@@ -1,0 +1,15 @@
+
+articulo
+# Callback vs Promises vs async await
+promises chain,...
+
+cambiar una promesa por async await:
+quitar la linea new promise.
+cambiar reject por throw new Error('')
+cambiar el resolv por return
+
+
+https://medium.com/front-end-hacking/callbacks-promises-and-async-await-ad4756e01d90
+
+
+https://medium.com/@ThatGuyTinus/callbacks-vs-promises-vs-async-await-f65ed7c2b9b4
