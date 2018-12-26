@@ -253,14 +253,42 @@ axios.get(`url`)
 
 // 2ª forma, por async await
 
-const miFunction = async(url)=>{
-const resp= await axios.get(`url`)
+const miFunction = async (url) => {
+    const resp = await axios.get(`https://loripsum.net/api/2/short/headers`)
 
-// a partir de esta linea ya tengo resp.
+    const resp2 = await axios.get(`https://loripsum.net/api/2/short/headers`)
+    if (resp.status === 200 && resp2.status === 200) {
+        return `
+
+        ${resp.data}
+
+        ;) **********
+
+        ${resp2.data}
+
+    `
+    }
 }
+
+
+miFunction().then((r, e) => {
+    console.log(r)
+})
+
 
 ```
 
 - request --> usa callback
 https://www.npmjs.com/package/request
+
+
+
+## Debugging node
+
+Hay varias maneras. Mis preferidas son estas:
+
+- `Visual Studio Code`, pulsas f5, se abre el modo debugging. Puedes parar en varias lineas concretas usando breakpoints. Pincha a la izquierda del número de linea.
+
+- `chrome`: En linea pon  `node --inspect-brk miScript.js`, en chrome, `chrome://inspect` pulsa donde ponga inspect.
+
 
